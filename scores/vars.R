@@ -1,4 +1,4 @@
-varP <- function(f,y,p){
+vars <- function(f,y,p){
   
   n <- dim(f)[1] # Size of ensemble
   d <- dim(f)[2] # Dimension

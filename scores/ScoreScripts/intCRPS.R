@@ -5,6 +5,7 @@ intCrps <- function(d,igd,l,u){
   converged <- F
   reltol <- 0.01
   
+  # Only attempt integration when the observation is within the bounds
   if(sum(l<u)==d){
     while(converged == F){
       hide <- capture.output(int <- vegas(d,1,igd,lower=l,upper=u,rel.tol=reltol))

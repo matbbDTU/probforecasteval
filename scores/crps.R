@@ -2,31 +2,31 @@ library(Emcdf)
 library(R2Cuba)
 source("ScoreScripts/intCRPS.R")
 
-crps <- function(f,y){
+crps <- function(x,y){
   
   # Bounds and dimensions
-  f <- as.matrix(f)
+  x <- as.matrix(x)
   y <- c(y)
-  l <- apply(f,2,min)
-  u <- apply(f,2,max)
-  n <- dim(f)[1]
-  d <- dim(f)[2]
+  l <- apply(x,2,min)
+  u <- apply(x,2,max)
+  m <- dim(x)[1]
+  k <- dim(x)[2]
   
   # Lower integrand
-  igdL <- function(x){
-    emcdf(f,x)^2
+  igdL <- function(u){
+    emcdf(x,u)^2
   }
   
   # Upper integrand
-  igdU <- function(x){
-    (emcdf(f,x)-1)^2
+  igdU <- function(u){
+    (emcdf(x,u)-1)^2
   }
   
   # Lower integral
-  intL <- intCrps(d,igdL,l,y)
+  intL <- intCrps(k,igdL,l,y)
   
   # Upper integral
-  intU <- intCrps(d,igdU,y,u)
+  intU <- intCrps(k,igdU,y,u)
   
   # CRPS result
   if((intL$ifail== 0) && (intU$ifail==0)){

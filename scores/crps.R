@@ -1,5 +1,5 @@
-source(Emcdf)
-require(R2Cuba)
+library(Emcdf)
+library(R2Cuba)
 source("ScoreScripts/intCRPS.R")
 
 crps <- function(f,y){

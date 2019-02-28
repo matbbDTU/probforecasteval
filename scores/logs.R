@@ -1,7 +1,11 @@
-require(ks)
+library(ks)
 
-logs <- function(f,y){
+logs <- function(x,y){
 
-  -log(kde(f,eval.points = as.numeric(y))$estimate)
+  # Estimate kernel density and evaluate fhat(y)
+  fhat_y <- kde(x,eval.points = y)$estimate
+  
+  # Log score
+  -log(fhat_y)
   
 }

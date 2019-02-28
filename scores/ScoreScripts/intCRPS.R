@@ -23,7 +23,7 @@ intCrps <- function(d,igd,l,u){
   }else{
     int<-NULL
     int$value <- 0
-    int$ifail <- 0
+    int$ifail <- 1
   }
   
   return(int)

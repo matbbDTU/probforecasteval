@@ -1,27 +1,25 @@
-source("ScoreScripts/defineECDF.R")
-source("ScoreScripts/intCRPS.R")
+source(Emcdf)
 require(R2Cuba)
+source("ScoreScripts/intCRPS.R")
 
 crps <- function(f,y){
   
   # Bounds and dimensions
   f <- as.matrix(f)
+  y <- c(y)
   l <- apply(f,2,min)
   u <- apply(f,2,max)
   n <- dim(f)[1]
   d <- dim(f)[2]
   
-  # Estimate CDF
-  cdf <- defineECDF(f,n,d)
-  
   # Lower integrand
   igdL <- function(x){
-    cdf(x)^2
+    emcdf(f,x)^2
   }
   
   # Upper integrand
   igdU <- function(x){
-    (cdf(x)-1)^2
+    (emcdf(f,x)-1)^2
   }
   
   # Lower integral

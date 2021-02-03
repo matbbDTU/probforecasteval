@@ -1,10 +1,18 @@
-- Observations are formatted as a column vector labeled as "x".
-- Forecasts are formatted as MxN matrices, where M (rows) is the ensemble size, and N (columns) is the number of time points.
+- Observations for each Case Study are formatted as a column vector labeled as "x".
+- Probabilistic forecasts for Case Study 1+2 are formatted as MxN matrices, where M (rows) is the ensemble size, and N (columns) is the number of time points.
   Each column is named "t=a+h(t0=a)". Where t0=a is the time point for the most recent observation, and h is the forecast horizon. For example, t=17(t0=15) refers
   to the forecast of X at time 17 given observations up to and including time 15.
+- Point forecasts for Case Study 3 is formatted as a column vector labeled as "x" (like the observation data).
 
 List of data files with description
 
 cs1_observations.csv ..... Case Study 1, observations
-cs1_forecastCor.csv ...... Case Study 1, ensemble forecast issued by the model with strong autocorrelation
-cs1_forecastUnc.csv ...... Case Study 1, ensemble forecast issued by the model with concealed autocorrelation
+cs1_forecastCor.csv ...... Case Study 1, ensemble forecast issued by the true model (strong autocorrelation)
+cs1_forecastUnc.csv ...... Case Study 1, ensemble forecast issued by the wrong model (concealed autocorrelation)
+cs2_observations.csv ..... Case Study 2, observations
+cs2_forecastSDE.csv ...... Case Study 2, ensemble forecast issued by the true model (stochastic differential equation)
+cs2_forecastArma.csv ..... Case Study 2, ensemble forecast issued by the wrong model (ARMA-model)
+cs3_observations.csv ..... Case Study 3, observations
+cs3_pointforecasts.csv ... Case Study 3, original point forecasts from the Klim wind power plant.
+
+Probabilistic forecasts for Case Study 3 are omitted in this repository due to its file size being almost 100 MB.

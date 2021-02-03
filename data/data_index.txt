@@ -12,7 +12,7 @@ cs1_forecastUnc.csv ...... Case Study 1, ensemble forecast issued by the wrong m
 cs2_observations.csv ..... Case Study 2, observations
 cs2_forecastSDE.csv ...... Case Study 2, ensemble forecast issued by the true model (stochastic differential equation)
 cs2_forecastArma.csv ..... Case Study 2, ensemble forecast issued by the wrong model (ARMA-model)
-cs3_observations.csv ..... Case Study 3, observations
-cs3_pointforecasts.csv ... Case Study 3, original point forecasts from the Klim wind power plant.
+cs3_observations.csv ..... Case Study 3, observations (time resolution: hourly)
+cs3_pointforecasts.csv ... Case Study 3, original point forecasts from the Klim wind power plant (time resolution: hourly)
 
 Probabilistic forecasts for Case Study 3 are omitted in this repository due to its file size being almost 100 MB.

@@ -1,1 +1,10 @@
-Default
+- Observations are formatted as a column vector labeled as "x".
+- Forecasts are formatted as MxN matrices, where M (rows) is the ensemble size, and N (columns) is the number of time points.
+  Each column is named "t=a+h(t0=a)". Where t0=a is the time point for the most recent observation, and h is the forecast horizon. For example, t=17(t0=15) refers
+  to the forecast of X at time 17 given observations up to and including time 15.
+
+List of data files with description
+
+cs1_observations.csv ..... Case Study 1, observations
+cs1_forecastCor.csv ...... Case Study 1, ensemble forecast issued by the model with strong autocorrelation
+cs1_forecastUnc.csv ...... Case Study 1, ensemble forecast issued by the model with concealed autocorrelation
